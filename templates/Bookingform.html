@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/Bookingform.css')}}"
+    />
+  </head>
+
+  <body>
+    <section class="container">
+      <span class="title">Event Hall Booking Form</span>
+      <form
+        action="/Bookingform"
+        class="form"
+        method="post"
+        name="myform"
+        onsubmit="return validateform()"
+      >
+        <div class="input-box">
+          <label>Department Name</label>
+          <input
+            type="text"
+            name="dept"
+            id="dept"
+            placeholder="Enter dept name"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <label>Event Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter event name"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <label>Club Name</label>
+          <input
+            type="text"
+            name="club"
+            id="club"
+            placeholder="Enter club name"
+            required
+          />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Event Incharge Phone No.</label>
+            <input
+              type="number"
+              name="phno"
+              placeholder="Enter phone number"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label>Event Date</label>
+            <input
+              type="date"
+              name="dob"
+              placeholder="Enter event date"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="input-box">
+          <label>Starting Time</label>
+          <input type="time" name="start" required />
+        </div>
+
+        <div class="input-box">
+          <label>Ending Time</label>
+          <input type="time" name="end" required />
+        </div>
+
+        <div class="input-box">
+          <label>Hall Name</label>
+          <select name="hall" required>
+            <option value="MBA Seminar Hall">MBA Seminar Hall</option>
+            <option value="EEE Seminar Hall">EEE Seminar Hall</option>
+            <option value="IT Seminar Hall-2">IT Seminar Hall-2</option>
+            <option value="IT Seminar Hall-1">IT Seminar Hall-1</option>
+            <option value="Convention center">Convention center</option>
+          </select>
+        </div>
+
+        <button id="submit">Submit</button>
+      </form>
+    </section>
+
+    <script src="{{url_for('static',filename='./login1.js')}}" defer></script>
+  </body>
+</html>
